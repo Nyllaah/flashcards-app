@@ -1,8 +1,18 @@
-function Flashcard() {
+import { Flashcard } from '../../../db/types';
+import Answer from './Answer';
+
+type FlashcardProps = {
+  question: string,
+  answer: string,
+}
+
+function Flashcard(props: FlashcardProps) {
   return (
     <>
-      <div id="question">question</div>
-      <div id="answer">answer</div>
+      <div>
+        <p>{props.question}</p>
+      </div>
+      <Answer answer={props.answer}/>
     </>
   )
 }
