@@ -1,10 +1,5 @@
-import { Flashcard } from '../../../db/types';
 import Answer from './Answer';
-
-type FlashcardProps = {
-  question: string,
-  answer: string,
-}
+import { FlashcardProps } from './types';
 
 function Flashcard(props: FlashcardProps) {
   return (

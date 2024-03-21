@@ -1,4 +1,4 @@
-export type Flashcard = {
+export type FlashcardType = {
     id: number,
     question: string,
     answer: string,
