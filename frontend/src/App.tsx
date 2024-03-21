@@ -1,10 +1,13 @@
+import Flashcard from "./components/Flashcard";
+
 function App() {
 
   return (
     <>
-      teste
+      <h1>Lesson Title</h1>
+      <Flashcard />
     </>
   )
 }
 
-export default App
+export default App;
