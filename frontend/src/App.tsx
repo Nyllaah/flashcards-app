@@ -1,28 +1,38 @@
 import Flashcard from "./components/Flashcard";
-import flashcards from '../../db/flashcards';
+import { FlashcardType } from "../../db/types";
+import allFlashcards from '../../db/flashcards';
 import { useState } from "react";
 import { getRandomIds } from './utils';
 
 function App() {
-  const [studySession, setStudySession] = useState<Flashcard[]>([]);
-  // const [currentCard, setCurrentCard] = useState<Flashcard>();
-  // const [cardIndex, setCardIndex] = useState(0);
+  const [lessonCards, setLessonCards] = useState<FlashcardType[]>([]);
+  const [ onGoingLesson, setOnGoingLesson ] = useState<boolean>(false);
+  const [index, setIndex] = useState(0);
 
-  const ids: number[] = getRandomIds(flashcards.length);
+  const handleClick = () => {
+    const ids: number[] = getRandomIds(allFlashcards.length);
+    
+    const cards = ids.map((id) => allFlashcards.find((card) => card.id === id));
 
-  const cards = ids.map((id) => flashcards.find((card) => card.id === id));
-  setStudySession(cards as Flashcard[]);
+    setLessonCards(cards as FlashcardType[]);
+    setOnGoingLesson(true);
+  }
 
   return (
     <>
-    <header>
-      <h1>Flashcards</h1>
-    </header>
-    <body>
-      {studySession.map((card) => {
-        return <Flashcard question={card.question} answer={card.answer}/>
-      })}
-    </body>
+      <header>
+        <h1>Let's learn English / Portuguese</h1>
+      </header>
+
+      <section>
+        {!onGoingLesson
+          ? <button onClick={ handleClick }>Start a Lesson</button>
+          : <Flashcard
+            question={lessonCards[index].question}
+            answer={lessonCards[index].answer}
+          />
+        }
+      </section>
     </>
   )
 }
