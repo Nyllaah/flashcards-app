@@ -3,7 +3,7 @@ import Answer from './Answer';
 import { FlashcardProps } from './types';
 
 function Flashcard(props: FlashcardProps) {
-    const [answerVisible, setAnswerVisible] = useState<boolean>(false);
+  const [answerVisible, setAnswerVisible] = useState<boolean>(false);
   return (
     <>
       <div>
