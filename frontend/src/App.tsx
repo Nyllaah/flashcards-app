@@ -2,13 +2,14 @@ import Flashcard from "./components/Flashcard";
 import { FlashcardType } from "../../db/types";
 import allFlashcards from '../../db/flashcards';
 import { getRandomIds } from './utils';
-import store from "./redux/store";
 import { startLesson } from "./redux/actions";
+import { useSelector, useDispatch } from "react-redux";
+import { StateType } from "./redux/reducers/flashcardReducer";
 
-const { dispatch } = store;
 
 function App() {
-  const state = store.getState();
+  const { cardIndex, onGoingLesson, currLessonCards } = useSelector((state: StateType) => state.flashcardReducer);
+  const dispatch = useDispatch();
 
   const handleClick = () => {
     const ids: number[] = getRandomIds(allFlashcards.length);
@@ -25,10 +26,10 @@ function App() {
       </header>
 
       <section>
-        {!flashcardReducer.onGoingLesson
+        {!onGoingLesson
           ? <button onClick={ handleClick }>Start a Lesson</button>
           : <Flashcard
-            question={facurrLessonCards[cardIndex].question}
+            question={currLessonCards[cardIndex].question}
             answer={currLessonCards[cardIndex].answer}
           />
         }
