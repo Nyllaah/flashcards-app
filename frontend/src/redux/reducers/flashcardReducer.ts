@@ -1,5 +1,5 @@
 import { FlashcardType } from "../../../../db/types";
-import { NEXT_FLASHCARD, SHOW_ANSWER, START_LESSON } from "../actions";
+import { END_LESSON, NEXT_FLASHCARD, SHOW_ANSWER, START_LESSON } from "../actions";
 
 type ActionType = {
   type: string,
@@ -30,6 +30,9 @@ const flashcardReducer = (state = INITIAL_STATE, action: ActionType) => {
         currLessonCards: action.payload.cards,
         onGoingLesson: true,
       };
+
+    case END_LESSON:
+      return INITIAL_STATE;
 
     case NEXT_FLASHCARD:
       return {

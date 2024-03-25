@@ -1,19 +1,28 @@
 import Answer from './Answer';
 import { FlashcardProps } from './types';
 import { useDispatch } from 'react-redux';
-import { showAnswer } from '../redux/actions';
+import { endLesson, showAnswer } from '../redux/actions';
 import { useSelector } from 'react-redux';
 import { StateType } from '../redux/reducers/flashcardReducer';
 
 function Flashcard(props: FlashcardProps) {
-  const { visibleAnswer } = useSelector((state: StateType) => state.flashcardReducer);
   const dispatch = useDispatch();
+  const { visibleAnswer, cardIndex, currLessonCards } = useSelector((state: StateType) => state.flashcardReducer);
+
+  const handleClick = () => {
+    if (cardIndex === currLessonCards.length -1) {
+      dispatch(endLesson());
+    } else {
+      dispatch(showAnswer())
+    }
+  }
+
   return (
     <>
       <div>
         <p>{props.question}</p>
       </div>
-      <button onClick={() => dispatch(showAnswer())}>See Answer</button>
+      <button onClick={ handleClick }>See Answer</button>
       {visibleAnswer && <Answer answer={props.answer}/>}
     </>
   )
