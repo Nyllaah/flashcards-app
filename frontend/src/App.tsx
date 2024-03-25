@@ -1,21 +1,20 @@
-import Flashcard from "./components/Flashcard";
+import { useSelector, useDispatch } from "react-redux";
+
 import { FlashcardType } from "../../db/types";
 import allFlashcards from '../../db/flashcards';
-import { getRandomIds } from './utils';
+
 import { startLesson } from "./redux/actions";
-import { useSelector, useDispatch } from "react-redux";
 import { StateType } from "./redux/reducers/flashcardReducer";
 
+import { getCards } from './helpers';
+import Flashcard from "./components/Flashcard";
 
 function App() {
   const { onGoingLesson } = useSelector((state: StateType) => state.flashcardReducer);
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    const ids: number[] = getRandomIds(allFlashcards.length);
-    
-    const cards = ids.map((id) => allFlashcards.find((card) => card.id === id));
-
+    const cards = getCards(allFlashcards);
     dispatch(startLesson(cards as FlashcardType[]));
   }
 
