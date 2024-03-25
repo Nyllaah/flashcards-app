@@ -8,7 +8,7 @@ import { StateType } from "./redux/reducers/flashcardReducer";
 
 
 function App() {
-  const { cardIndex, onGoingLesson, currLessonCards } = useSelector((state: StateType) => state.flashcardReducer);
+  const { onGoingLesson } = useSelector((state: StateType) => state.flashcardReducer);
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -28,10 +28,7 @@ function App() {
       <section>
         {!onGoingLesson
           ? <button onClick={ handleClick }>Start a Lesson</button>
-          : <Flashcard
-            question={currLessonCards[cardIndex].question}
-            answer={currLessonCards[cardIndex].answer}
-          />
+          : <Flashcard />
         }
       </section>
     </>

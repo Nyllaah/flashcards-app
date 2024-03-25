@@ -31,21 +31,21 @@ const flashcardReducer = (state = INITIAL_STATE, action: ActionType) => {
         onGoingLesson: true,
       };
 
-    case END_LESSON:
-      return INITIAL_STATE;
-
     case NEXT_FLASHCARD:
       return {
         ...state,
         cardIndex: state.cardIndex + 1,
         visibleAnswer: false,
       };
-
+        
     case SHOW_ANSWER:
       return {
         ...state,
         visibleAnswer: true,
       };
+
+    case END_LESSON:
+      return INITIAL_STATE;
 
     default:
       return state;
