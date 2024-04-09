@@ -1,5 +1,5 @@
 import { FlashcardType } from "../../../../db/types";
-import { END_LESSON, NEXT_FLASHCARD, SHOW_ANSWER, START_LESSON } from "../actions";
+import { END_LESSON, GET_ALL_FLASHCARDS, NEXT_FLASHCARD, SHOW_ANSWER, START_LESSON, UPDATE_STATUS } from "../actions";
 
 type ActionType = {
   type: string,
@@ -8,6 +8,7 @@ type ActionType = {
 
 export type StateType = {
   flashcardReducer: {
+    allFlashcards: FlashcardType[],
     cardIndex: number,
     onGoingLesson: boolean,
     currLessonCards: FlashcardType[],
@@ -16,6 +17,7 @@ export type StateType = {
 };
 
 const INITIAL_STATE = {
+  allFlashcards: [],
   cardIndex: 0,
   onGoingLesson: false,
   currLessonCards: [],
@@ -24,6 +26,12 @@ const INITIAL_STATE = {
 
 const flashcardReducer = (state = INITIAL_STATE, action: ActionType) => {
   switch(action.type) {
+    case GET_ALL_FLASHCARDS:
+      return {
+        ...state,
+        allFlashcards: action.payload.allFlashcards,
+      };
+      
     case START_LESSON:
       return {
         ...state,
@@ -46,6 +54,12 @@ const flashcardReducer = (state = INITIAL_STATE, action: ActionType) => {
 
     case END_LESSON:
       return INITIAL_STATE;
+    
+    case UPDATE_STATUS:
+      return {
+        ...state,
+        allFlashcards: action.payload.cards,
+      };
 
     default:
       return state;

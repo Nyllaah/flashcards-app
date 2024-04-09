@@ -23,7 +23,8 @@ export const getCards = (allFlashcards: FlashcardType[]) => {
   });
 
   const lessonCards: FlashcardType[] = [];
-
+// TO DO: what if there's less than 5?
+// implement spaced repetition
   flashcardsByStatus.forEach((flashcards, index) => {
     if (index === 0) {
       const indexList = getListOfNumbers(flashcards.length, 5);

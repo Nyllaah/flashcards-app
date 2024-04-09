@@ -1,17 +1,20 @@
 import { useSelector, useDispatch } from "react-redux";
 
 import { FlashcardType } from "../../db/types";
-import allFlashcards from '../../db/flashcards';
+import  data from '../../db/flashcards';
 
-import { startLesson } from "./redux/actions";
+import { getAllFlashcards, startLesson } from "./redux/actions";
 import { StateType } from "./redux/reducers/flashcardReducer";
 
 import { getCards } from './helpers';
 import Flashcard from "./components/Flashcard";
+import { useEffect } from "react";
 
 function App() {
-  const { onGoingLesson } = useSelector((state: StateType) => state.flashcardReducer);
+  const { onGoingLesson, allFlashcards } = useSelector((state: StateType) => state.flashcardReducer);
   const dispatch = useDispatch();
+
+  useEffect(() => {dispatch(getAllFlashcards(data))}, [])
 
   const handleClick = () => {
     const cards = getCards(allFlashcards);
