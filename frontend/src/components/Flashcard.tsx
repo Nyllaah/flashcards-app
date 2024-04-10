@@ -16,7 +16,8 @@ function Flashcard() {
       : <div>
         <p>{`Current Status: ${currLessonCards[cardIndex].status}`}</p>
           <Question question={currLessonCards[cardIndex].question}/>
-          {visibleAnswer && <Answer answer={currLessonCards[cardIndex].answer}/>}
+          {visibleAnswer && <Answer answer={currLessonCards[cardIndex].answer} id={currLessonCards[cardIndex].id} />}
+          <button>End Lesson</button>
       </div>
       }
     </>
