@@ -42,4 +42,5 @@ body {
 .title {
     min-width: 30vw;
     text-align: center;
+    margin-bottom: 1rem;
 }

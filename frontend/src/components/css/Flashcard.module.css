@@ -48,19 +48,6 @@
     padding-bottom: 2%;
 }
 
-.question {
-    background-color: var(--bg-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.question span {
-    font-size: 2rem;
-}
-
 .footer {
     display: flex;
     justify-content: center;
