@@ -11,6 +11,7 @@ import Flashcard from "./components/Flashcard";
 import { useEffect } from "react";
 
 import styles from './App.module.css';
+import Button from "./components/Button";
 
 function App() {
   const { onGoingLesson, allFlashcards } = useSelector((state: StateType) => state.flashcardReducer);
@@ -26,7 +27,7 @@ function App() {
   return ( !onGoingLesson
     ? <div className={styles.container}>
         <h1 className={styles.title}>Flashcards</h1>
-        <button className={styles.startBtn} onClick={ handleClick }>Start a Lesson</button>
+        <Button action={ handleClick } content={'Start a Lesson'} />
       </div>
     : <Flashcard />
   )

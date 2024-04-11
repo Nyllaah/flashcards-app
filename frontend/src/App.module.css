@@ -1,3 +1,13 @@
+:root {
+    --purple: rgb(238, 130, 238);
+    --dark-purple: rgb(212, 99, 212);
+    --light-purple: rgb(245, 166, 245);
+    --gray: rgb(71, 71, 71);
+    --bg-color: rgb(255, 255, 255);
+    --text-color: rgb(71, 71, 71);
+    --btn-text-color: rgb(255, 255, 255);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,21 +17,8 @@
     font-family: 'Arial Narrow Bold', sans-serif;
 }
 
-:root {
-    --purple: rgb(238, 130, 238);
-    --dark-purple: rgb(212, 99, 212);
-    --light-purple: rgb(245, 166, 245);
-    --gray: rgb(71, 71, 71);
-    --bg-color: rgb(255, 255, 255);
-    --text-color: rgb(71, 71, 71);
-    --btn-text-color: rgb(255, 255, 255);
-    --height: 896px;
-    --width: 414px;
-}
-
 body {
     background-color: var(--gray);
-    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -29,9 +26,12 @@ body {
 }
 
 .container {
-    height: var(--height);
-    width: var(--width);
+    height: 80vh;
+    width: 80vw;
+    min-height: fit-content;
+    min-width: fit-content;
     border: 3px solid var(--purple);
+    border-radius: 1rem;
     background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
@@ -42,23 +42,4 @@ body {
 .title {
     min-width: 30vw;
     text-align: center;
-}
-
-.startBtn {
-    padding: 8px 20px;
-    width: 200px;
-    height: 50px;
-    color: var(--btn-text-color);
-    font-weight: 700;
-    border-radius: 10px;
-    text-transform: uppercase;
-    margin: 25px;
-    overflow: hidden;
-    position: relative;
-    background-color: var(--purple);
-}
-
-.startBtn:hover {
-    background: var(--purple);
-    box-shadow: 0 0 20px 5px var(--light-purple);
 }
