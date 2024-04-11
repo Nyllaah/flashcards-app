@@ -20,7 +20,7 @@ function Answer(props: {answer: string, id: number}) {
   return (
     <>
       <WordContainer content={props.answer} type={'answer'}/>
-      <div className={styles.container}>
+      <div className={styles.statusBtnContainer}>
         {[1, 2, 3, 4, 5].map((status) => (
           <button
           className={ styles.statusBtn }
