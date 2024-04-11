@@ -1,20 +1,5 @@
-import { FlashcardType } from "../../../../db/types";
+import { ActionType } from "../../../types";
 import { END_LESSON, GET_ALL_FLASHCARDS, NEXT_FLASHCARD, SHOW_ANSWER, START_LESSON, UPDATE_STATUS } from "../actions";
-
-type ActionType = {
-  type: string,
-  payload: any,
-}
-
-export type StateType = {
-  flashcardReducer: {
-    allFlashcards: FlashcardType[],
-    cardIndex: number,
-    onGoingLesson: boolean,
-    currLessonCards: FlashcardType[],
-    visibleAnswer: boolean,
-  }
-};
 
 const INITIAL_STATE = {
   allFlashcards: [],
