@@ -30,3 +30,13 @@
     font-size: large;
     font-weight: 900;
 }
+
+.question {
+    background-color: var(--bg-color);
+    height: calc(var(--height) - 80px);
+    width: calc(var(--width) - 6px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
