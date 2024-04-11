@@ -16,7 +16,7 @@ function WordContainer(props: {
         <div
             className={ styles.container }
             onClick={ () => dispatch(showAnswer()) }
-            style={ !props.visibleAnswer ? { height: '100%' } : {} }
+            style={ props.visibleAnswer === false ? { height: '100%' } : { } }
           >
             <span>{ props.content }</span>
         </div>
