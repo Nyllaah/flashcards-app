@@ -4,11 +4,13 @@
     border: 0;
     box-sizing: border-box;
     color: var(--text-color);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Arial Narrow Bold', sans-serif;
 }
 
 :root {
     --purple: rgb(238, 130, 238);
+    --dark-purple: rgb(212, 99, 212);
+    --light-purple: rgb(245, 166, 245);
     --gray: rgb(71, 71, 71);
     --text-color: rgb(71, 71, 71);
 }
@@ -36,16 +38,23 @@ body {
 .title {
     min-width: 30vw;
     text-align: center;
-    margin: 10px;
 }
 
 .startBtn {
-    min-width: fit-content;
-    font-size: medium;
-    background-color: var(--purple);
-    border-radius: 3px;
-    text-transform: uppercase;
+    padding: 8px 20px;
+    width: 200px;
+    height: 50px;
     color: white;
-    font-weight: 900;
-    padding: 20px;
+    font-weight: 700;
+    border-radius: 10px;
+    text-transform: uppercase;
+    margin: 25px;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--purple);
+}
+
+.startBtn:hover {
+    background: var(--purple);
+    box-shadow: 0 0 20px 5px var(--light-purple);
 }
