@@ -1,0 +1,32 @@
+:root {
+    --status-1: grey;
+    --status-2: rgb(197, 136, 197);
+    --status-3: violet;
+    --status-4: rgb(236, 93, 236);
+    --status-5: purple;
+}
+
+.flashcard {
+    height: var(--height);
+    width: var(--width);
+    border: 3px solid var(--purple);
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    height: 50px;
+    background-color: var(--status-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 5px 0 0;
+}
+
+.header span {
+    color: var(--btn-text-color);
+    font-size: large;
+    font-weight: 900;
+}
