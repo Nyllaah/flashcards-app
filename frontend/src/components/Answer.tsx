@@ -1,10 +1,10 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { nextFlashcard, updateStatus } from "../redux/actions";
-import { useSelector } from "react-redux";
-import { StateType } from "../redux/reducers/flashcardReducer";
-import { FlashcardType, StatusType } from "../../../db/types";
+import { FlashcardType, StateType, StatusType } from "../../types";
+import styles from './css/Answer.module.css';
+import WordContainer from "./WordContainer";
 
-function Answer (props: {answer: string, id: number}) {
+function Answer(props: {answer: string, id: number}) {
   const { allFlashcards } = useSelector((state: StateType) => state.flashcardReducer);
   const dispatch = useDispatch();
 
@@ -19,15 +19,14 @@ function Answer (props: {answer: string, id: number}) {
 
   return (
     <>
-      <div>
-        <p>{props.answer}</p>
-      </div>
-      <div>
-        <button onClick={ (e) => handleClick(e, props.id) }>1</button>
-        <button onClick={ (e) => handleClick(e, props.id) }>2</button>
-        <button onClick={ (e) => handleClick(e, props.id) }>3</button>
-        <button onClick={ (e) => handleClick(e, props.id) }>4</button>
-        <button onClick={ (e) => handleClick(e, props.id) }>5</button>
+      <WordContainer content={props.answer} type={'answer'}/>
+      <div className={styles.container}>
+        {[1, 2, 3, 4, 5].map((status) => (
+          <button
+          className={ styles.statusBtn }
+          style={{backgroundColor: `var(--status-${status})`}}
+          onClick={ (e) => handleClick(e, props.id) }>{status}</button>
+        ))}
       </div>
     </>
 )}

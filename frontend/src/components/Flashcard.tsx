@@ -5,10 +5,10 @@ import Answer from './Answer';
 import EndOfLesson from './EndOfLesson';
 import Button from './Button';
 
-import { StateType } from '../redux/reducers/flashcardReducer';
-import { FlashcardType } from '../../../db/types';
+import { FlashcardType, StateType } from '../../types';
 
 import styles from './css/Flashcard.module.css';
+import WordContainer from './WordContainer';
 
 function Flashcard() {
   const { visibleAnswer, cardIndex, currLessonCards } = useSelector((state: StateType) => state.flashcardReducer);
@@ -17,29 +17,31 @@ function Flashcard() {
   const dispatch = useDispatch();
 
   return (
-    <div className={styles.flashcard}>
+    <div className={ styles.flashcard }>
       {cardIndex === currLessonCards.length
       ? <EndOfLesson />
       : <>
         <header
-          className={styles.header}
-          style={{backgroundColor: `var(--status-${currCard.status})`}}
+          className={ styles.header }
+          style={{ backgroundColor: `var(--status-${currCard.status})` }}
         >
-          <span>{cardIndex + 1}</span>
+          <span>{ cardIndex + 1 }</span>
         </header>
 
-        <section className={styles.container}>
-          <div className={styles.question} onClick={() => dispatch(showAnswer())} style={visibleAnswer ? {height: 'calc(var(--height) / 2)'}: {}}>
-            <span>{currCard.question}</span>
-          </div>
+        <section className={ styles.container }>
+          <WordContainer
+            content={ currCard.question }
+            type={'question'}
+            visibleAnswer
+          />
 
           {!visibleAnswer 
-          ? <Button content={'See Answer'} action={() => dispatch(showAnswer())}/>
-          : <Answer answer={currCard.answer} id={currCard.id} />}
+          ? <Button content={'See Answer'} action={ () => dispatch(showAnswer()) }/>
+          : <Answer answer={ currCard.answer } id={ currCard.id } />}
           
         </section>
-        <footer className={styles.footer}>
-          <Button content={'End Lesson'} action={() => dispatch(endLesson())} />
+        <footer className={ styles.footer }>
+          <Button content={'End Lesson'} action={ () => dispatch(endLesson()) } />
         </footer>
       </>
       }
