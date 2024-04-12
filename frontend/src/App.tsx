@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 
 import { FlashcardType, StateType } from "../types";
-import  data from '../../db/flashcards';
+import  data from '../../database/flashcards';
 
 import { /*getAllFlashcards,*/ startLesson } from "./redux/actions";
 
