@@ -1,4 +1,4 @@
-import { FlashcardType } from '../frontend/types';
+import { FlashcardType } from '../../../frontend/types';
 
 const flashcards: FlashcardType[] = [
     { id: 1, question: "hello", answer: "olá", status: 1 },
