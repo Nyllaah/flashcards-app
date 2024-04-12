@@ -6,7 +6,7 @@ import styles from './css/WordContainer.module.css';
 function WordContainer(props: {
   content: string,
   type: 'question' | 'answer',
-  visibleAnswer?: boolean,
+  visibleAnswer: boolean,
 }) {
   const dispatch = useDispatch();
   
@@ -16,7 +16,7 @@ function WordContainer(props: {
         <div
             className={ styles.container }
             onClick={ () => dispatch(showAnswer()) }
-            style={ props.visibleAnswer === false ? { height: '100%' } : { } }
+            style={ props.visibleAnswer === true ? { height: '50%' } : { height: '100%' } }
           >
             <span>{ props.content }</span>
         </div>
