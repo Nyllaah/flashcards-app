@@ -41,7 +41,7 @@ body {
     min-height: fit-content;
     min-width: fit-content;
     border: var(--border-size) solid var(--purple);
-    border-radius: var(--border-radious-int);
+    border-radius: var(--border-radius-int);
     background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
