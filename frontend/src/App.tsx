@@ -3,23 +3,24 @@ import { useSelector, useDispatch } from "react-redux";
 import { FlashcardType, StateType } from "../types";
 import  data from '../../db/flashcards';
 
-import { getAllFlashcards, startLesson } from "./redux/actions";
+import { /*getAllFlashcards,*/ startLesson } from "./redux/actions";
 
 import { getCards } from './helpers';
 import Flashcard from "./components/Flashcard";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 import styles from './App.module.css';
 import Button from "./components/Button";
 
 function App() {
-  const { onGoingLesson, allFlashcards } = useSelector((state: StateType) => state.flashcardReducer);
+  const { onGoingLesson/*, allFlashcards*/ } = useSelector((state: StateType) => state.flashcardReducer);
   const dispatch = useDispatch();
 
-  useEffect(() => {dispatch(getAllFlashcards(data))}, [])
+  // useEffect(() => {dispatch(getAllFlashcards(data))}, [])
 
   const handleClick = () => {
-    const cards = getCards(allFlashcards);
+    // const cards = getCards(allFlashcards);
+    const cards = getCards(data);
     dispatch(startLesson(cards as FlashcardType[]));
   }
 
