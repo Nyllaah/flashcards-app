@@ -5,18 +5,19 @@ import { /*getAllFlashcards,*/ startLesson } from "../redux/actions";
 import { FlashcardType, StateType } from "../types";
 import  data from '../../../backend/src/database/flashcards';
 import { getCards } from '../helpers';
-import styles from './Home.module.css';
+import styles from './css/Home.module.css';
 
 
 import Flashcard from "../components/Flashcard";
 import Button from "../components/Button";
+import { useNavigate } from "react-router-dom";
 
-//TO DO Create new deck button
 //TO DO Choose a deck
 
 function Home() {
   const { onGoingLesson/*, allFlashcards*/ } = useSelector((state: StateType) => state.flashcardReducer);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // useEffect(() => {dispatch(getAllFlashcards(data))}, [])
 
@@ -27,10 +28,11 @@ function Home() {
   }
 
   return ( !onGoingLesson
-    ? <div className={styles.container}>
+    ? <>
         <h1 className={styles.title}>Flashcards</h1>
         <Button action={ handleClick } content={'Start a Lesson'} />
-      </div>
+        <Button action={() => navigate('/create')} content={'Create New Deck'} />
+      </>
     : <Flashcard />
   )
 }

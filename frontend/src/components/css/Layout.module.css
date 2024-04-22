@@ -1,0 +1,13 @@
+.container {
+    height: 80vh;
+    width: 80vw;
+    min-height: fit-content;
+    min-width: fit-content;
+    border: var(--border-size) solid var(--purple);
+    border-radius: var(--border-radius-int);
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
