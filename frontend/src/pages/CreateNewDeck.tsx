@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Button from '../components/Button';
 import styles from './css/CreateNewDeck.module.css';
+import { cleanWords, formatSentences } from '../helpers';
 
 function CreateNewDeck() {
   const [text, setText] = useState('');
@@ -13,7 +14,12 @@ function CreateNewDeck() {
 
   const handleClick = () => {
     const method = byWords ? ' ' : '.';
-    const cards = text.split(method);
+    let cards = text.split(method);
+    if (byWords === true) {
+      cards = cleanWords(cards);
+    } else {
+      cards = formatSentences(cards);
+    }
     console.log(cards);
   };
 
