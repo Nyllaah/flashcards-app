@@ -1,5 +1,5 @@
 import { ActionType } from "../../types";
-import { END_LESSON, GET_ALL_FLASHCARDS, NEXT_FLASHCARD, SHOW_ANSWER, START_LESSON, UPDATE_STATUS } from "../actions";
+import { END_LESSON, GET_ALL_FLASHCARDS, NEXT_FLASHCARD, SHOW_ANSWER, START_LESSON, UPDATE_STATUS } from "../actions/flashcardActions";
 
 const INITIAL_STATE = {
   allFlashcards: [],
