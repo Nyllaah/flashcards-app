@@ -59,3 +59,13 @@ export const getCards = (allFlashcards: FlashcardType[]) => {
 
   return lessonCards;
 }
+
+export const cleanWords = (words: string[]) => {
+  return words.map((word) => word.replace(/[.,;]+$/, "").toLowerCase())
+    .filter((word) => word !== '');
+};
+
+export const formatSentences = (sentences: string[]) => {
+  return sentences.filter((sentence) => sentence !== ' ')
+    .map((sentence) => `${sentence}.`)
+}
