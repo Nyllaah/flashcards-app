@@ -25,7 +25,7 @@ function Flashcard() {
   };
 
   return (
-    <div className={ styles.flashcard }>
+    <>
       {cardIndex === currLessonCards.length
       ? <EndOfLesson />
       : <>
@@ -69,7 +69,7 @@ function Flashcard() {
         </footer>
       </>
       }
-    </div>
+    </>
   )
 }
 

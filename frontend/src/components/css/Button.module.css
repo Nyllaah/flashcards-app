@@ -9,6 +9,7 @@
     overflow: hidden;
     position: relative;
     background-color: var(--purple);
+    margin: 6px;
 }
 
 .button:hover {
