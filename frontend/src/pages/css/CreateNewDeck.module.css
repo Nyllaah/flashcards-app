@@ -7,18 +7,38 @@
     margin: 10% 0;
 }
 
-.textContainer {
+.form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 80%;
+    gap: 6px;
 }
 
 .textarea {
     border: 1px solid var(--purple);
     border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-bottom: 10px;
 }
 
 .p {
-    width: 80%;
     text-align: center;
+}
+
+.methodContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: -10px;
+    margin-bottom: 10px;
+}
+
+.methodContainer input {
+    margin-right: 6px;
+}
+
+.container input {
+    border: 1px solid var(--purple);
+    border-radius: 0.4rem;
+    margin-left: 10px;
+    padding: 0.2rem 0.5rem;
 }

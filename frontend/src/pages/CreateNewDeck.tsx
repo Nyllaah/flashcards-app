@@ -31,12 +31,12 @@ function CreateNewDeck() {
     } else {
       setByWords(false)
     }
-  }
+  };
   
   return (
     <div className={ styles.container }>
       <h2>Create New Deck</h2>
-      <section className={ styles.textContainer } >
+      <form className={ styles.form } >
         <p className={ styles.p } >Paste the text below to create a new flashcard deck from it.</p>
         <textarea
           className={ styles.textarea }
@@ -46,31 +46,35 @@ function CreateNewDeck() {
           rows={15}
           onChange={ handleChange }
         />
-      </section>
-      <section>
-        <label htmlFor="by-words">
-          <input
-            type="radio"
-            name='method'
-            id='by-words'
-            checked={ byWords }
-            onChange={ handleInput }
-          />
-          Separate by words
+        <div className={styles.methodContainer}>
+          <label htmlFor="by-words">
+            <input
+              type="radio"
+              name='method'
+              id='by-words'
+              checked={ byWords }
+              onChange={ handleInput }
+              />
+            Separate by words
+          </label>
+          <label htmlFor="by-sentences">
+            <input
+              type="radio"
+              name='method'
+              id='by-sentences'
+              onChange={ handleInput }
+              />
+            Separate by sentences
+          </label>
+        </div>
+        <label htmlFor="deck-name">
+          Deck name:
+          <input type="text" name="deck-name" id="deck-name" />
         </label>
-        <label htmlFor="by-sentences">
-          <input
-            type="radio"
-            name='method'
-            id='by-sentences'
-            onChange={ handleInput }
-          />
-          Separate by sentences
-        </label>
-      </section>
+      </form>
       <Button action={ handleClick } content={'Create'} />
     </div>
-  )
-}
+  );
+};
 
 export default CreateNewDeck;
