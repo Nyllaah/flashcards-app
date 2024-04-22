@@ -1,4 +1,4 @@
-import { FlashcardType } from "../../types";
+import { FlashcardType } from "../types";
 
 export const NEXT_FLASHCARD = 'NEXT_FLASHCARD';
 export const START_LESSON = 'START_LESSON';

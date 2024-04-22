@@ -4,7 +4,7 @@ import { endLesson, nextFlashcard, showAnswer, updateStatus } from "../redux/act
 import EndOfLesson from './EndOfLesson';
 import Button from './Button';
 
-import { FlashcardType, StateType, StatusType } from '../../types';
+import { FlashcardType, StateType, StatusType } from '../types';
 
 import styles from './css/Flashcard.module.css';
 import WordContainer from './WordContainer';
