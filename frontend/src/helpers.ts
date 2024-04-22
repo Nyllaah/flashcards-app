@@ -1,4 +1,4 @@
-import { FlashcardType } from "../types";
+import { FlashcardType } from "./types";
 
 const getRandomInt = (max: number): number => Math.floor(Math.random() * max);
 

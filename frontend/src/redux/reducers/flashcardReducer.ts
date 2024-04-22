@@ -1,4 +1,4 @@
-import { ActionType } from "../../../types";
+import { ActionType } from "../../types";
 import { END_LESSON, GET_ALL_FLASHCARDS, NEXT_FLASHCARD, SHOW_ANSWER, START_LESSON, UPDATE_STATUS } from "../actions";
 
 const INITIAL_STATE = {
