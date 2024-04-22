@@ -1,5 +1,5 @@
 import { useSelector, useDispatch  } from 'react-redux';
-import { endLesson, nextFlashcard, showAnswer, updateStatus } from "../redux/actions";
+import { endLesson, nextFlashcard, showAnswer, updateStatus } from "../redux/actions/flashcardActions";
 
 import EndOfLesson from './EndOfLesson';
 import Button from './Button';

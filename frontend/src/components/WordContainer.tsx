@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { showAnswer } from '../redux/actions';
+import { showAnswer } from '../redux/actions/flashcardActions';
 
 import styles from './css/WordContainer.module.css';
 
