@@ -37,22 +37,36 @@ function CreateNewDeck() {
     <div className={ styles.container }>
       <h2>Create New Deck</h2>
       <form className={ styles.form } >
-        <select name="language" id="language">
-          <option value="english">English</option>
-          <option value="spanish">Spanish</option>
-          <option value="japanese">Japanese</option>
-          <option value="portuguese">Spanish</option>
-        </select>
-        <p className={ styles.p } >Paste the text below to create a new flashcard deck from it.</p>
-        <textarea
-          className={ styles.textarea }
-          name="text-to-flashcard"
-          id="text-to-flashcard"
-          cols={30}
-          rows={15}
-          onChange={ handleChange }
-        />
-        <div className={styles.methodContainer}>
+        <label htmlFor="deck-name">Deck name:
+          <input type="text" name="deck-name" id="deck-name" />
+        </label>
+        <label>Select the input language:
+          <select name="language" id="language">
+            <option value="english">English</option>
+            <option value="spanish">Spanish</option>
+            <option value="japanese">Japanese</option>
+            <option value="portuguese">Spanish</option>
+          </select>
+        </label>
+        <label>Select the output language:
+          <select name="language" id="language">
+            <option value="english">English</option>
+            <option value="spanish">Spanish</option>
+            <option value="japanese">Japanese</option>
+            <option value="portuguese">Spanish</option>
+          </select>
+        </label>
+        <label className={ styles.p } >Paste the source text below:
+          <textarea
+            className={ styles.textarea }
+            name="text-to-flashcard"
+            id="text-to-flashcard"
+            cols={30}
+            rows={15}
+            onChange={ handleChange }
+            />
+        </label>
+        <section className={styles.methodContainer}>
           <label htmlFor="by-words">
             <input
               type="radio"
@@ -72,11 +86,7 @@ function CreateNewDeck() {
               />
             Separate by sentences
           </label>
-        </div>
-        <label htmlFor="deck-name">
-          Deck name:
-          <input type="text" name="deck-name" id="deck-name" />
-        </label>
+        </section>
       </form>
       <Button action={ handleClick } content={'Create'} />
     </div>
