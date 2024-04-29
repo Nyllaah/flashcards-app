@@ -37,6 +37,12 @@ function CreateNewDeck() {
     <div className={ styles.container }>
       <h2>Create New Deck</h2>
       <form className={ styles.form } >
+        <select name="language" id="language">
+          <option value="english">English</option>
+          <option value="spanish">Spanish</option>
+          <option value="japanese">Japanese</option>
+          <option value="portuguese">Spanish</option>
+        </select>
         <p className={ styles.p } >Paste the text below to create a new flashcard deck from it.</p>
         <textarea
           className={ styles.textarea }
