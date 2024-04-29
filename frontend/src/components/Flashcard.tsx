@@ -1,5 +1,5 @@
 import { useSelector, useDispatch  } from 'react-redux';
-import { endLesson, nextFlashcard, showAnswer, updateStatus } from "../redux/actions";
+import { endLesson, nextFlashcard, showAnswer, updateStatus } from "../redux/actions/flashcardActions";
 
 import EndOfLesson from './EndOfLesson';
 import Button from './Button';
@@ -25,7 +25,7 @@ function Flashcard() {
   };
 
   return (
-    <div className={ styles.flashcard }>
+    <>
       {cardIndex === currLessonCards.length
       ? <EndOfLesson />
       : <>
@@ -69,7 +69,7 @@ function Flashcard() {
         </footer>
       </>
       }
-    </div>
+    </>
   )
 }
 

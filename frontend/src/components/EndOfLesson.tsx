@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { endLesson } from "../redux/actions";
+import { endLesson } from "../redux/actions/flashcardActions";
 import styles from './css/EndOfLesson.module.css';
 import Button from "./Button";
 
