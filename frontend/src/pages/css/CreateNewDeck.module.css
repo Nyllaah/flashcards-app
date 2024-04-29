@@ -36,7 +36,7 @@
     margin-right: 6px;
 }
 
-.container input {
+.container input, .container select {
     border: 1px solid var(--purple);
     border-radius: 0.4rem;
     margin-left: 10px;
