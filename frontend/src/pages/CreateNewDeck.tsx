@@ -37,35 +37,30 @@ function CreateNewDeck() {
     <div className={ styles.container }>
       <h2>Create New Deck</h2>
       <form className={ styles.form } >
-        <label htmlFor="deck-name">Deck name:
-          <input type="text" name="deck-name" id="deck-name" />
-        </label>
-        <label>Select the input language:
-          <select name="language" id="language">
-            <option value="english">English</option>
-            <option value="spanish">Spanish</option>
-            <option value="japanese">Japanese</option>
-            <option value="portuguese">Spanish</option>
-          </select>
-        </label>
-        <label>Select the output language:
-          <select name="language" id="language">
-            <option value="english">English</option>
-            <option value="spanish">Spanish</option>
-            <option value="japanese">Japanese</option>
-            <option value="portuguese">Spanish</option>
-          </select>
-        </label>
-        <label className={ styles.p } >Paste the source text below:
-          <textarea
-            className={ styles.textarea }
-            name="text-to-flashcard"
-            id="text-to-flashcard"
-            cols={30}
-            rows={15}
-            onChange={ handleChange }
-            />
-        </label>
+        <input type="text" name="deck-name" id="deck-name" placeholder='New Deck name' />
+        <select name="language" id="language" >
+          <option disabled selected>Select the input language</option>
+          <option value="english">English</option>
+          <option value="spanish">Spanish</option>
+          <option value="japanese">Japanese</option>
+          <option value="portuguese">Brazilian Portuguese</option>
+        </select>
+        <select name="language" id="language" >
+          <option disabled selected>Select the output language</option>
+          <option value="english">English</option>
+          <option value="spanish">Spanish</option>
+          <option value="japanese">Japanese</option>
+          <option value="portuguese">Brazilian Portuguese</option>
+        </select>
+        <textarea
+          className={ styles.textarea }
+          name="text-to-flashcard"
+          id="text-to-flashcard"
+          cols={30}
+          rows={15}
+          onChange={ handleChange }
+          placeholder='Paste the source text here'
+          />
         <section className={styles.methodContainer}>
           <label htmlFor="by-words">
             <input

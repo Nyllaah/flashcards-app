@@ -21,11 +21,6 @@
     width: 100%;
 }
 
-.methodContainer {
-    display: flex;
-    flex-direction: column;
-}
-
 .container input, .container select {
     border: 1px solid var(--purple);
     border-radius: 0.4rem;
@@ -33,7 +28,22 @@
     width: 100%;
 }
 
+.methodContainer {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    gap: 6px;
+    margin-top: 10px;
+    border: 1px solid var(--purple);
+    border-radius: 0.5rem;
+    padding: 4px;
+}
+
 .methodContainer input {
     margin-right: 6px;
     width: auto;
+}
+
+.methodContainer label {
+    display: flex;
 }
